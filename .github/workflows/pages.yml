@@ -21,20 +21,25 @@ jobs:
           cache: npm
       - run: npm install
       - run: npm run build:pages
-      - name: Find static output
+      - name: Prepare Pages folder
         run: |
-          if [ -f dist/index.html ]; then echo "OUT=dist" >> $GITHUB_ENV
-          elif [ -f .output/public/index.html ]; then echo "OUT=.output/public" >> $GITHUB_ENV
+          echo "=== dist ==="
+          find dist -maxdepth 3 | head -80
+          if [ -f dist/index.html ]; then
+            true
+          elif [ -f dist/_shell.html ]; then
+            cp dist/_shell.html dist/index.html
+          elif [ -f dist/client/index.html ]; then
+            cp -a dist/client/. dist/
           else
-            echo "No index.html"; find . -name index.html -not -path './node_modules/*' | head
-            ls -la
+            echo "Cannot find a shell HTML"
             exit 1
           fi
-      - name: SPA fallback for GitHub Pages
-        run: cp "$OUT/index.html" "$OUT/404.html"
+          cp dist/index.html dist/404.html
+          touch dist/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.OUT }}
+          path: dist
   deploy:
     needs: build
     runs-on: ubuntu-latest
