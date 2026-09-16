@@ -1,2 +1,1 @@
-# kolandscaping
-Preview site for K&amp;O Landscaping &amp; Handyman Services LLC
+Preview site for K&O Landscaping. Live: https://bartzman.github.io/kolandscaping
