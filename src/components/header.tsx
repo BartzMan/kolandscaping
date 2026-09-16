@@ -39,79 +39,82 @@ export function Header() {
   const invert = isHome && !solid;
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-8 z-40 transition-[background-color,border-color,backdrop-filter] duration-200",
-        solid
-          ? "border-b border-border bg-sand/95 backdrop-blur-md"
-          : "border-b border-transparent bg-transparent",
-      )}
-    >
-      <div className="mx-auto flex h-[4.25rem] max-w-6xl items-center justify-between gap-4 px-5">
-        <Logo invert={invert} />
+    <header className="fixed inset-x-0 top-8 z-50">
+      <div
+        className={cn(
+          "transition-[background-color,border-color,backdrop-filter] duration-200",
+          solid
+            ? "border-b border-border bg-sand/95 backdrop-blur-md"
+            : "border-b border-transparent bg-transparent",
+        )}
+      >
+        <div className="mx-auto flex h-[4.25rem] max-w-6xl items-center justify-between gap-4 px-5">
+          <Logo invert={invert} />
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
-          {nav.map((item) => {
-            const active =
-              item.href === "/"
-                ? pathname === "/"
-                : pathname === item.href || pathname.startsWith(`${item.href}/`);
-            return (
-              <Link
-                key={item.href}
-                to={item.href}
-                className={cn(
-                  "text-sm font-medium tracking-wide transition-colors",
-                  invert
-                    ? active
-                      ? "text-cream"
-                      : "text-cream/70 hover:text-cream"
-                    : active
-                      ? "text-ink"
-                      : "text-muted hover:text-ink",
-                )}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
+          <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+            {nav.map((item) => {
+              const active =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname === item.href || pathname.startsWith(`${item.href}/`);
+              return (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className={cn(
+                    "text-sm font-medium tracking-wide transition-colors",
+                    invert
+                      ? active
+                        ? "text-cream"
+                        : "text-cream/70 hover:text-cream"
+                      : active
+                        ? "text-ink"
+                        : "text-muted hover:text-ink",
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <a
-            href={site.phoneHref}
+          <div className="hidden items-center gap-3 lg:flex">
+            <a
+              href={site.phoneHref}
+              className={cn(
+                "flex items-center gap-2 text-sm font-medium",
+                invert ? "text-cream" : "text-ink",
+              )}
+            >
+              <Phone className="size-4" />
+              {site.phone}
+            </a>
+            <Button
+              size="sm"
+              variant={invert ? "cream" : "primary"}
+              onClick={() => openWith()}
+            >
+              Free estimate
+            </Button>
+          </div>
+
+          <button
+            type="button"
             className={cn(
-              "flex items-center gap-2 text-sm font-medium",
+              "relative z-[60] grid size-11 place-items-center rounded-sm lg:hidden",
               invert ? "text-cream" : "text-ink",
             )}
+            aria-label={menu ? "Close menu" : "Open menu"}
+            aria-expanded={menu}
+            onClick={() => setMenu((v) => !v)}
           >
-            <Phone className="size-4" />
-            {site.phone}
-          </a>
-          <Button
-            size="sm"
-            variant={invert ? "cream" : "primary"}
-            onClick={() => openWith()}
-          >
-            Free estimate
-          </Button>
+            {menu ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
         </div>
-
-        <button
-          className={cn(
-            "grid size-11 place-items-center rounded-sm lg:hidden",
-            invert ? "text-cream" : "text-ink",
-          )}
-          aria-label={menu ? "Close menu" : "Open menu"}
-          aria-expanded={menu}
-          onClick={() => setMenu((v) => !v)}
-        >
-          {menu ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
       </div>
 
       {menu && (
-        <div className="fixed inset-x-0 top-[6.25rem] bottom-0 z-40 overflow-y-auto border-t border-border bg-sand px-5 py-6 lg:hidden">
+        <div className="fixed inset-x-0 top-[6.25rem] bottom-0 z-50 overflow-y-auto border-t border-border bg-sand px-5 py-6 lg:hidden">
           <nav className="grid gap-1" aria-label="Mobile">
             {nav.map((item) => (
               <Link
