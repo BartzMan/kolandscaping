@@ -1,3 +1,5 @@
+import { asset } from "@/lib/utils";
+
 export type Service = {
   slug: string;
   title: string;
@@ -22,7 +24,7 @@ export const services: Service[] = [
       "The crew your street already knows. Trimming, weeding, debris haul-off, and a yard that stays HOA-clean.",
     description:
       "Most San Tan Valley lots don’t fail from a lack of plants — they fail from weeks of dust, monsoon drop, and weeds coming up through the gravel. K&O runs reliable weekly and biweekly maintenance so the front looks finished on a Tuesday, not just the day after a big job. We trim and shape, knock down weeds, blow off hardscape, and haul the debris. Neighbors on the same street often share a route, which is why the work stays consistent and the price stays fair.",
-    image: "/work/front-plantings.jpg",
+    image: asset("/work/front-plantings.jpg"),
     imageAlt: "Trimmed shrubs, gravel beds, and pink blooms along a San Tan Valley sidewalk",
     bullets: [
       "Shrub trim and shape that looks intentional, not scalped",
@@ -44,7 +46,7 @@ export const services: Service[] = [
       "A green rectangle that survives July. Proper base, clean edges, and turf that doesn’t look like a putting-green sticker.",
     description:
       "East Valley summers punish real grass. A well-built turf yard is the difference between a dust lot and a backyard people actually use. We install residential turf with a compacted base, clean paver or concrete borders, and seams you shouldn’t notice from the patio. Front yards, rear rectangles, and play areas — built to drain, stay cool enough to walk, and look right against Arizona stucco and gravel.",
-    image: "/work/backyard-turf.jpg",
+    image: asset("/work/backyard-turf.jpg"),
     imageAlt: "Rectangular artificial turf lawn with paver border and hedges in a San Tan Valley backyard",
     bullets: [
       "Residential turf for front yards, backyards, and play areas",
@@ -66,7 +68,7 @@ export const services: Service[] = [
       "Side yards that were wasted space, now a place to sit. Walkways, pads, and patio work that matches the house.",
     description:
       "A lot of East Valley homes have a side yard that does nothing. A paver walk or a sitting pad changes how you use the property — especially in the evening, when the block wall holds the heat and the lights come on. We set clay and concrete pavers on a proper base so they don’t rock the first monsoon. Walkways along the house, patio extensions, and small gathering pads are the jobs we get called back for.",
-    image: "/work/paver-walk.jpg",
+    image: asset("/work/paver-walk.jpg"),
     imageAlt: "Clay paver walkway along a stucco home with gravel beds in San Tan Valley",
     bullets: [
       "Paver walkways, side-yard pads, and patio work",
@@ -88,7 +90,7 @@ export const services: Service[] = [
       "The leak you called about at 3. The fix that showed up at 4. Drip lines, broken heads, and timers that actually run.",
     description:
       "Irrigation is the quiet reason desert landscaping lives or dies. A broken head, a split drip line, a timer that never kicked on — that’s how a $4,000 front yard turns gray in two weeks. K&O is known in the East Valley for showing up fast on irrigation calls, pulling parts off the truck, and finishing the repair on the spot when we can. We also check lines during regular maintenance so small leaks don’t become dead zones.",
-    image: "/work/front-plantings.jpg",
+    image: asset("/work/front-plantings.jpg"),
     imageAlt: "Maintained planting bed in a San Tan Valley front yard",
     bullets: [
       "Broken heads, split drip, and valve issues",
@@ -110,7 +112,7 @@ export const services: Service[] = [
       "Overgrown, monsoon-trashed, or just ignored. We cut it back, haul it out, and leave the lot walkable.",
     description:
       "The one-time cleanup is how a lot of neighbors find us. A yard that got away from the last crew. A monsoon that filled the rock with branches. A garage and backyard that collected junk until it was easier not to look. We cut, pull, haul, and leave it clean — not “stacked by the gate for you to deal with.” After a reset, many homeowners put the same crew on a biweekly route so it never gets back there.",
-    image: "/work/front-trees.jpg",
+    image: asset("/work/front-trees.jpg"),
     imageAlt: "Cleaned and planted front yard with gravel and young trees in San Tan Valley",
     bullets: [
       "Full front and back cleanups",
@@ -132,7 +134,7 @@ export const services: Service[] = [
       "Painting, small repairs, and the indoor jobs that never make the contractor’s calendar. Same crew. Same standard.",
     description:
       "Joel and Alberto’s crew comes from landscaping and construction/remodeling — which is why neighbors ask us to stay after the yard is done. Painting, small interior fixes, lighting, and the punch-list work around a house. We are a local handyman and landscape company, not a general contractor for large remodels. If the job is a good fit, we quote it clearly. If it isn’t, we say so.",
-    image: "/work/front-curb.jpg",
+    image: asset("/work/front-curb.jpg"),
     imageAlt: "San Tan Valley home exterior after landscaping and property care",
     bullets: [
       "Interior and exterior painting",

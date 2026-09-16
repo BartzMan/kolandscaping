@@ -1,12 +1,13 @@
 import { site } from "@/data/site";
 import { faqs } from "@/data/faqs";
 import { services } from "@/data/services";
+import { asset } from "@/lib/utils";
 
 const localBusiness = {
   "@context": "https://schema.org",
   "@type": "LandscapingBusiness",
   name: site.name,
-  image: ["/work/front-curb.jpg", "/work/backyard-turf.jpg", "/work/paver-walk.jpg"],
+  image: [asset("/work/front-curb.jpg"), asset("/work/backyard-turf.jpg"), asset("/work/paver-walk.jpg")],
   telephone: "+1-480-930-5833",
   email: site.email,
   address: {

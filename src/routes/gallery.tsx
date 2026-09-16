@@ -5,6 +5,7 @@ import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { gallery } from "@/data/gallery";
 import { useQuote } from "@/lib/quote-store";
+import { asset } from "@/lib/utils";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -28,7 +29,7 @@ function GalleryPage() {
   return (
     <main className="pb-24 lg:pb-0">
       <PageHero
-        image="/work/backyard-turf.jpg"
+        image={asset("/work/backyard-turf.jpg")}
         imageAlt="Finished East Valley backyard with turf and hedges"
         eyebrow="Work"
         title="Lots that used to be dust."

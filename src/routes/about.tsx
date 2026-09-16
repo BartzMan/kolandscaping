@@ -3,6 +3,7 @@ import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { site } from "@/data/site";
 import { useQuote } from "@/lib/quote-store";
+import { asset } from "@/lib/utils";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -24,7 +25,7 @@ function AboutPage() {
   return (
     <main className="pb-24 lg:pb-0">
       <PageHero
-        image="/work/front-trees.jpg"
+        image={asset("/work/front-trees.jpg")}
         imageAlt="Young trees and gravel landscaping at a San Tan Valley home"
         eyebrow="The crew"
         title="Two owners. One truck that actually shows up."

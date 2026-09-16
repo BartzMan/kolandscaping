@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { areas } from "@/data/areas";
 import { site } from "@/data/site";
 import { useQuote } from "@/lib/quote-store";
+import { asset } from "@/lib/utils";
 
 export const Route = createFileRoute("/areas")({
   head: () => ({
@@ -28,7 +29,7 @@ function AreasPage() {
   return (
     <main className="pb-24 lg:pb-0">
       <PageHero
-        image="/work/front-trees.jpg"
+        image={asset("/work/front-trees.jpg")}
         imageAlt="Desert front yard in the East Valley"
         eyebrow="Where we work"
         title="If the lot is in the East Valley, send the address."

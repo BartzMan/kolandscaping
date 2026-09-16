@@ -6,6 +6,7 @@ import { QuoteForm } from "@/components/quote-form";
 import { FaqList } from "@/components/faq-list";
 import { site } from "@/data/site";
 import { getOpenStatus } from "@/lib/hours";
+import { asset } from "@/lib/utils";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -30,7 +31,7 @@ function ContactPage() {
   return (
     <main className="pb-24 lg:pb-0">
       <PageHero
-        image="/work/paver-walk.jpg"
+        image={asset("/work/paver-walk.jpg")}
         imageAlt="Paver walkway at a San Tan Valley home"
         eyebrow="Contact"
         title="Call, text, or send the form. We’ll take it from there."

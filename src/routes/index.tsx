@@ -10,7 +10,7 @@ import { services } from "@/data/services";
 import { site } from "@/data/site";
 import { getOpenStatus } from "@/lib/hours";
 import { useQuote } from "@/lib/quote-store";
-import { cn } from "@/lib/utils";
+import { cn, asset } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,7 +41,7 @@ function Home() {
     <main className="pb-24 lg:pb-0">
       <section className="relative isolate min-h-[100svh] overflow-hidden bg-olive-deep text-cream">
         <img
-          src="/work/front-curb.jpg"
+          src={asset("/work/front-curb.jpg")}
           alt="Finished San Tan Valley front yard with turf, plantings, and a clean driveway"
           className="absolute inset-0 size-full object-cover object-[62%_58%]"
         />
@@ -103,7 +103,7 @@ function Home() {
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:py-28">
         <div className="relative">
           <img
-            src="/work/backyard-turf.jpg"
+            src={asset("/work/backyard-turf.jpg")}
             alt="Backyard turf with paver border and trimmed hedges"
             className="aspect-[4/5] w-full rounded-xl object-cover shadow-soft sm:aspect-[5/6]"
           />
@@ -365,7 +365,7 @@ function Home() {
 
       <section className="relative isolate overflow-hidden bg-olive-deep">
         <img
-          src="/work/backyard-turf.jpg"
+          src={asset("/work/backyard-turf.jpg")}
           alt="San Tan Valley backyard with turf"
           className="absolute inset-0 size-full object-cover"
         />

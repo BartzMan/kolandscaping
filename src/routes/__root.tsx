@@ -9,6 +9,7 @@ import { PreviewBanner } from "@/components/preview-banner";
 import { NotFound } from "@/components/not-found";
 import { JsonLd } from "@/components/json-ld";
 import appCss from "../styles.css?url";
+import { asset } from "@/lib/utils";
 
 const APP_NAME = "K&O Landscaping & Handyman";
 
@@ -34,7 +35,7 @@ export const Route = createRootRoute({
       },
     ],
     links: [
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "icon", type: "image/svg+xml", href: asset("/favicon.svg") },
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
       { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
