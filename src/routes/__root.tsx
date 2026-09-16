@@ -7,6 +7,7 @@ import { QuoteDialog } from "@/components/quote-dialog";
 import { MobileCta } from "@/components/mobile-cta";
 import { PreviewBanner } from "@/components/preview-banner";
 import { NotFound } from "@/components/not-found";
+import { JsonLd } from "@/components/json-ld";
 import appCss from "../styles.css?url";
 
 const APP_NAME = "K&O Landscaping & Handyman";
