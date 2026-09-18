@@ -24,7 +24,7 @@ export function PageHero({
         alt={imageAlt}
         className="absolute inset-0 size-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/55 to-ink/25" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/70 via-ink/32 to-ink/10" />
       <div className="relative mx-auto flex min-h-[28rem] max-w-6xl flex-col justify-end px-5 pb-14 pt-36">
         {crumbs && (
           <nav aria-label="Breadcrumb" className="mb-5 text-sm text-cream/70">

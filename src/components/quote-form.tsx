@@ -1,4 +1,5 @@
 import { useEffect, useState, type FormEvent } from "react";
+import { Link } from "@tanstack/react-router";
 import { Check, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
@@ -178,6 +179,13 @@ export function QuoteForm({ preset = "", compact = false }: QuoteFormProps) {
           text {site.phone}
         </a>
         . We usually reply the same day.
+      </p>
+      <p className="text-center text-xs leading-relaxed text-muted/80">
+        By sending, you agree we can call or text you about this estimate.{" "}
+        <Link to="/privacy" className="underline decoration-border underline-offset-2 hover:text-ink">
+          Privacy
+        </Link>
+        .
       </p>
     </form>
   );

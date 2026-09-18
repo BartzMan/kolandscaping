@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "@/components/logo";
-import { services } from "@/data/services";
 import { nav, site } from "@/data/site";
 
 export function Footer() {
@@ -75,8 +74,13 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <p className="max-w-md sm:text-right">
-            {services.map((s) => s.navLabel).join(" · ")}
+          <p className="flex flex-wrap gap-x-4 gap-y-1 sm:justify-end">
+            <Link to="/privacy" className="hover:text-cream">
+              Privacy
+            </Link>
+            <Link to="/terms" className="hover:text-cream">
+              Terms
+            </Link>
           </p>
         </div>
       </div>

@@ -14,6 +14,8 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AreasRouteImport } from './routes/areas'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
 import { Route as ServicesSlugRouteImport } from './routes/services/$slug'
 
@@ -42,6 +44,16 @@ const GalleryRoute = GalleryRouteImport.update({
   path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/services/',
   path: '/services/',
@@ -59,6 +71,8 @@ export interface FileRoutesByFullPath {
   '/areas': typeof AreasRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -68,6 +82,8 @@ export interface FileRoutesByTo {
   '/areas': typeof AreasRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services': typeof ServicesIndexRoute
 }
@@ -78,6 +94,8 @@ export interface FileRoutesById {
   '/areas': typeof AreasRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -89,6 +107,8 @@ export interface FileRouteTypes {
     | '/areas'
     | '/contact'
     | '/gallery'
+    | '/privacy'
+    | '/terms'
     | '/services/$slug'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +118,8 @@ export interface FileRouteTypes {
     | '/areas'
     | '/contact'
     | '/gallery'
+    | '/privacy'
+    | '/terms'
     | '/services/$slug'
     | '/services'
   id:
@@ -107,6 +129,8 @@ export interface FileRouteTypes {
     | '/areas'
     | '/contact'
     | '/gallery'
+    | '/privacy'
+    | '/terms'
     | '/services/$slug'
     | '/services/'
   fileRoutesById: FileRoutesById
@@ -117,6 +141,8 @@ export interface RootRouteChildren {
   AreasRoute: typeof AreasRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
+  PrivacyRoute: typeof PrivacyRoute
+  TermsRoute: typeof TermsRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
@@ -158,6 +184,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/': {
       id: '/services/'
       path: '/services'
@@ -181,6 +221,8 @@ const rootRouteChildren: RootRouteChildren = {
   AreasRoute: AreasRoute,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
+  PrivacyRoute: PrivacyRoute,
+  TermsRoute: TermsRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
