@@ -43,21 +43,22 @@ function Home() {
         <img
           src={asset("/work/front-curb.jpg")}
           alt="Finished San Tan Valley front yard with turf, plantings, and a clean driveway"
-          className="absolute inset-0 size-full scale-[1.04] object-cover object-[38%_46%] brightness-[1.07] contrast-[1.04] saturate-[1.12]"
+          className="absolute inset-0 size-full scale-[1.04] object-cover object-[42%_46%] brightness-[1.05] saturate-[1.08]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/70 via-ink/28 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-ink/10" />
+        {/* Scrim only where the words sit — yard stays open on the right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/82 via-ink/55 to-transparent lg:via-ink/40" />
+        <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink/55 to-transparent" />
 
         <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-16 pt-32 sm:pb-20">
-          <p className="fade-up text-xs font-medium uppercase tracking-[0.22em] text-cream/70">
+          <p className="hero-copy fade-up text-xs font-medium uppercase tracking-[0.22em] text-cream">
             San Tan Valley · East Valley
           </p>
-          <h1 className="fade-up fade-up-1 mt-4 max-w-3xl font-display text-[2.6rem] leading-[1.05] font-medium drop-shadow-[0_2px_20px_rgba(0,0,0,0.35)] sm:text-6xl lg:text-[4.4rem]">
+          <h1 className="hero-copy fade-up fade-up-1 mt-4 max-w-3xl font-display text-[2.6rem] leading-[1.05] font-medium sm:text-6xl lg:text-[4.4rem]">
             The yard you wanted
             <br />
             <em className="font-normal italic">when you bought the house.</em>
           </h1>
-          <p className="fade-up fade-up-2 mt-6 max-w-xl text-base leading-relaxed text-cream/85 sm:text-lg">
+          <p className="hero-copy fade-up fade-up-2 mt-6 max-w-xl text-base leading-relaxed text-cream sm:text-lg">
             Family-owned turf, pavers, irrigation, and maintenance — the crew
             400+ East Valley neighbors already text. Fair prices. Debris hauled.
             Work that still looks right in July.
@@ -71,7 +72,7 @@ function Home() {
               {site.phone}
             </a>
           </div>
-          <div className="fade-up fade-up-4 mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-cream/80">
+          <div className="hero-copy fade-up fade-up-4 mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-cream">
             <span className="inline-flex items-center gap-2">
               <Stars />
               {site.rating} · {site.reviewCount}+ reviews
